@@ -1,0 +1,69 @@
+* {
+  font-family: "Kanit", sans-serif;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  background: #ada;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.menu-items {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.menu_items a {
+  color: #fff !important;
+}
+
+button {
+  background: rgb(114, 164, 114);
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+
+input {
+  border: 1px solid #61a575;
+  border-radius: 5px;
+  margin: 2px;
+  padding: 5px;
+  outline: none;
+}
+
+.todo-container {
+  margin: 5px;
+  padding: 5px;
+  font-size: 15px;
+  color: #434343;
+}
+
+.single-todo{
+font-size: 16px;
+background:#e7e7e7;
+color:#434343;
+padding:20px;
+margin:5px;
+border-radius:5px;
+font-weight: normal;
+display: flex;
+justify-content: space-between;
+}
