@@ -1,16 +1,16 @@
-import { Link, Route, useHistory } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import NavBar from "../../components/NavBar";
 
 const Login = () => {
-  const history = useHistory();
   const handleLogin = () => {
-    localStorage.setItem("loggedIn", true);
-    history.push("/");
+    localStorage.setItem("loggedIn", JSON.stringify(true));
+    window.location.reload();
   };
   const handleLogout = () => {
-    localStorage.setItem("loggedIn", false);
-    history.replace("/");
+    localStorage.setItem("loggedIn", JSON.stringify(false));
+    window.location.reload();
   };
+
   return (
     <>
       <NavBar />
@@ -44,17 +44,7 @@ const Login = () => {
         <Link to="/login/showStatus">Show login status</Link>
         <br />
         <br />
-
-        <Route path="/login/showStatus">
-          <>
-            {localStorage.getItem("loggedIn") &&
-            localStorage.getItem("loggedIn") === "true" ? (
-              <div>The use is currently logged in</div>
-            ) : (
-              <div>The user is not logged in.</div>
-            )}
-          </>
-        </Route>
+        <Outlet />
       </div>
     </>
   );

@@ -1,9 +1,17 @@
 import { FaEye } from "react-icons/fa";
-import NavBar from "../../components/NavBar";
 import { Link } from "react-router-dom";
+import NavBar from "../../components/NavBar";
 
 const MainPage = () => {
+  // const navigate = useNavigate();
+  // const location = useLocation();
+  // console.log("Navigate:", location.state?.shouldReload);
+  // if (location.state?.shouldReload) {
+  //   console.log("Reloading");
+  //   window.location.reload();
+  // }
   const getAllTodo = JSON.parse(localStorage.getItem("todo")) || [];
+
   return (
     <>
       <NavBar />

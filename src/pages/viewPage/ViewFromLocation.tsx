@@ -1,8 +1,8 @@
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import NavBar from "../../components/NavBar";
 
 const ViewPageLocation = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const getLocation = useLocation();
 
   const queryString = new URLSearchParams(getLocation.search);
@@ -16,7 +16,7 @@ const ViewPageLocation = () => {
       <NavBar />
       <button
         onClick={() => {
-          history.push("/");
+          navigate("/");
         }}
         style={{ background: "#ff3792", color: "white" }}
       >

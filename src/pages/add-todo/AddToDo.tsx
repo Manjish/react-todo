@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import NavBar from "../../components/NavBar";
-import { useHistory } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import AuthCheck from "../../middleware/AuthCheck";
 
 const AddToDo = () => {
   const todoText = useRef();
-  const history = useHistory();
+  const navigate = useNavigate();
   AuthCheck();
   const addToDo = (e) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ const AddToDo = () => {
     initalTodo.push(todoString);
 
     localStorage.setItem("todo", JSON.stringify(initalTodo));
-    history.push("/");
+    navigate("/");
   };
   return (
     <>

@@ -1,9 +1,9 @@
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import NavBar from "../../components/NavBar";
 
 const ViewPage = () => {
-  const history = useHistory();
-  const getParams: { id: string } = useParams();
+  const navigate = useNavigate();
+  const getParams = useParams();
 
   const getId = getParams.id;
   const getAllItems = JSON.parse(localStorage.getItem("todo")) || [];
@@ -12,7 +12,7 @@ const ViewPage = () => {
   const deleteTodo = () => {
     getAllItems.splice(getId, 1);
     localStorage.setItem("todo", JSON.stringify(getAllItems));
-    history.replace("/");
+    navigate("/", { replace: true });
   };
 
   return (
@@ -21,7 +21,7 @@ const ViewPage = () => {
         <NavBar />
         <button
           onClick={() => {
-            history.push("/");
+            navigate("/");
           }}
           style={{ background: "#ff3792", color: "white" }}
         >
