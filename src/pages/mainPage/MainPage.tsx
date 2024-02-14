@@ -10,16 +10,24 @@ const MainPage = () => {
 
       <div className="todo-container">
         <h3>Your to-do:</h3>
-        {getAllTodo.map((elem, index) => (
-          <>
-            <div className="single-todo">
-              {elem}
-              <Link to={`/view/${index}`}>
-                <FaEye size={20} style={{ cursor: "pointer" }} />
-              </Link>
-            </div>
-          </>
-        ))}
+
+        {getAllTodo.length > 0 ? (
+          getAllTodo.map((elem, index) => (
+            <>
+              <div className="single-todo">
+                {elem}
+                <Link to={`/view/${index}`}>
+                  <FaEye size={20} style={{ cursor: "pointer" }} />
+                </Link>
+              </div>
+            </>
+          ))
+        ) : (
+          <center>
+            You have caught up with all your todos.{" "}
+            <Link to="/add">Add more</Link>
+          </center>
+        )}
       </div>
     </>
   );
